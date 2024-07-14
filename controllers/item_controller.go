@@ -20,5 +20,3 @@ func NewItemController(service services.IItemService) IItemController {
 func (c ItemController) FindAll() (*[]models.Item, error) {
 	return c.service.FindAll()
 }
-
-jfdks;ljfdklsa
