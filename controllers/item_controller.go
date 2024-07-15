@@ -9,6 +9,7 @@ import (
 
 type IItemController interface {
 	FindAll(ctx *gin.Context)
+	FindById(ctx *gin.Context, itemId uint)
 }
 
 type ItemController struct {
@@ -27,4 +28,14 @@ func (c *ItemController) FindAll(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, gin.H{"data": items})
+}
+
+func (c *ItemController) FindById(ctx *gin.Context, itemId uint) {
+	item, err := c.service.FindById(itemId)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Unexpected error"})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{"data": item})
 }
