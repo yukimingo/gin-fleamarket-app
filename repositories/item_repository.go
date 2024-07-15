@@ -47,5 +47,5 @@ func (r *ItemMemoryRepository) Update(updateItem models.Item) (*models.Item, err
 			return &r.items[i], nil
 		}
 	}
-	return nil, errors.New("Unexpected error")
+	return nil, errors.New("unexpected error")
 }
