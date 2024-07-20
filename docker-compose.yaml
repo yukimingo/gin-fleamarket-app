@@ -14,12 +14,10 @@ services:
       POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
       POSTGRES_DB: fleamarket
     hostname: postgres
-    restart: always
     user: root
 
   pgadmin:
     image: dpage/pgadmin4
-    restart: always
     ports:
       - 81:80
     environment:
