@@ -13,6 +13,7 @@ type IItemController interface {
 	FindAll(ctx *gin.Context)
 	FindById(ctx *gin.Context)
 	Create(ctx *gin.Context)
+	Update(ctx *gin.Context)
 }
 
 type ItemController struct {
