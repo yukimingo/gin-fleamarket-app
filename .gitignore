@@ -49,3 +49,5 @@ bin/
 # Test results
 test-results/
 *.junit.xml
+
+docker/
